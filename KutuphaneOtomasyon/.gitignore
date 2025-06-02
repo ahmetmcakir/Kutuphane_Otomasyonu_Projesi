@@ -1,0 +1,19 @@
+﻿# Visual Studio dosyaları
+.vs/
+*.user
+*.suo
+
+# Derleme klasörleri
+bin/
+obj/
+
+# Geçici dosyalar
+*.log
+*.tmp
+
+# Access veritabanı dosyası
+*.accdb
+
+# Yedek dosyalar
+*.bak
+*.ldb
