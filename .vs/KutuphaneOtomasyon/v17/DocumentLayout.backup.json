@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|c:\\users\\pc\\source\\repos\\kutuphaneotomasyon\\kutuphaneotomasyon\\yonetici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|c:\\users\\pc\\source\\repos\\kutuphaneotomasyon\\kutuphaneotomasyon\\kitaplartablosu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\kitaplartablosu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|c:\\users\\pc\\source\\repos\\kutuphaneotomasyon\\kutuphaneotomasyon\\kitaplartablosu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\kitaplartablosu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\veritabanigeriyukleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\veritabanigeriyukleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\yonetici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\yonetici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|c:\\users\\pc\\source\\repos\\kutuphaneotomasyon\\kutuphaneotomasyon\\yonetici.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\yonetici.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\yonetici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\yonetici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEB00CEC-A957-40A0-929E-3DC3E747D6C7}|KutuphaneOtomasyon.DAL\\KutuphaneOtomasyon.DAL.csproj|c:\\users\\pc\\source\\repos\\kutuphaneotomasyon\\kutuphaneotomasyon.dal\\yedeklemeislemleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEB00CEC-A957-40A0-929E-3DC3E747D6C7}|KutuphaneOtomasyon.DAL\\KutuphaneOtomasyon.DAL.csproj|solutionrelative:kutuphaneotomasyon.dal\\yedeklemeislemleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\veritabanigeriyukleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\veritabanigeriyukleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\kutuphaneotomasyon\\veritabanigeriyukleform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C540F50F-19D4-471B-BF38-7BBCDD611378}|KutuphaneOtomasyon\\KutuphaneOtomasyon.csproj|solutionrelative:kutuphaneotomasyon\\veritabanigeriyukleform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,37 +51,116 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "KitaplarTablosu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\KitaplarTablosu.Designer.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\KitaplarTablosu.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\KitaplarTablosu.Designer.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon\\KitaplarTablosu.Designer.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T15:18:27.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KitaplarTablosu.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\KitaplarTablosu.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\KitaplarTablosu.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\KitaplarTablosu.cs [Tasar\u0131m]",
+              "RelativeToolTip": "KutuphaneOtomasyon\\KitaplarTablosu.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T15:18:20.632Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Yonetici.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.Designer.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\Yonetici.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.Designer.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon\\Yonetici.Designer.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAmwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T15:17:57.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VeritabaniGeriYukleForm.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:38:21.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VeritabaniGeriYukleForm.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs [Tasar\u0131m]",
+              "RelativeToolTip": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:30:04.924Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Yonetici.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\Yonetici.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon\\Yonetici.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAcwOoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:13:51.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YedeklemeIslemleri.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon.DAL\\YedeklemeIslemleri.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon.DAL\\YedeklemeIslemleri.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon.DAL\\YedeklemeIslemleri.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon.DAL\\YedeklemeIslemleri.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvx0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:04:45.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Yonetici.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.cs",
               "RelativeDocumentMoniker": "KutuphaneOtomasyon\\Yonetici.cs",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Yonetici.cs [Tasar\u0131m]",
               "RelativeToolTip": "KutuphaneOtomasyon\\Yonetici.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T10:43:34.038Z",
+              "WhenOpened": "2025-06-02T14:13:32.098Z",
               "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Form1.cs",
-              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\Form1.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Form1.cs",
-              "RelativeToolTip": "KutuphaneOtomasyon\\Form1.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAkwGAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "VeritabaniGeriYukleForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.Designer.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\VeritabaniGeriYukleForm.Designer.cs",
+              "RelativeToolTip": "KutuphaneOtomasyon\\VeritabaniGeriYukleForm.Designer.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAEwDgAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T12:16:40.639Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Form1.cs",
-              "RelativeDocumentMoniker": "KutuphaneOtomasyon\\Form1.cs",
-              "ToolTip": "C:\\Users\\PC\\source\\repos\\KutuphaneOtomasyon\\KutuphaneOtomasyon\\Form1.cs [Tasar\u0131m]",
-              "RelativeToolTip": "KutuphaneOtomasyon\\Form1.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T12:16:35.618Z"
+              "WhenOpened": "2025-06-02T14:38:57.351Z",
+              "EditorCaption": ""
             }
           ]
         }

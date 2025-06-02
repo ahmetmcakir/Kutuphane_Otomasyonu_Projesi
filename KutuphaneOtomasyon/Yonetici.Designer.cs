@@ -51,6 +51,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmbYetki = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,14 +64,14 @@
             this.pictureBox1.Image = global::KutuphaneOtomasyon.Properties.Resources._25_May_2025_12_40_16;
             this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(803, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(1023, 642);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox5.Location = new System.Drawing.Point(106, 336);
+            this.textBox5.Location = new System.Drawing.Point(102, 379);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
             this.textBox5.TabIndex = 97;
@@ -77,7 +81,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(10, 295);
+            this.label5.Location = new System.Drawing.Point(8, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(284, 22);
             this.label5.TabIndex = 96;
@@ -200,7 +204,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button6.Location = new System.Drawing.Point(616, 405);
+            this.button6.Location = new System.Drawing.Point(832, 585);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(174, 35);
             this.button6.TabIndex = 83;
@@ -211,7 +215,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button5.Location = new System.Drawing.Point(14, 405);
+            this.button5.Location = new System.Drawing.Point(12, 585);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(178, 35);
             this.button5.TabIndex = 82;
@@ -222,7 +226,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.Location = new System.Drawing.Point(346, 405);
+            this.button4.Location = new System.Drawing.Point(442, 493);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 35);
             this.button4.TabIndex = 81;
@@ -254,7 +258,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.Location = new System.Drawing.Point(346, 364);
+            this.button3.Location = new System.Drawing.Point(442, 443);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 35);
             this.button3.TabIndex = 78;
@@ -265,7 +269,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.Location = new System.Drawing.Point(346, 323);
+            this.button2.Location = new System.Drawing.Point(442, 402);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 35);
             this.button2.TabIndex = 77;
@@ -276,7 +280,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Location = new System.Drawing.Point(346, 282);
+            this.button1.Location = new System.Drawing.Point(442, 361);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 35);
             this.button1.TabIndex = 76;
@@ -284,12 +288,57 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // cmbYetki
+            // 
+            this.cmbYetki.FormattingEnabled = true;
+            this.cmbYetki.Items.AddRange(new object[] {
+            "Kullanici",
+            "Yonetici"});
+            this.cmbYetki.Location = new System.Drawing.Point(184, 277);
+            this.cmbYetki.Name = "cmbYetki";
+            this.cmbYetki.Size = new System.Drawing.Size(104, 24);
+            this.cmbYetki.TabIndex = 98;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(27, 277);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 22);
+            this.label9.TabIndex = 99;
+            this.label9.Text = "Yetki Seçimi:";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(430, 534);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(155, 35);
+            this.button7.TabIndex = 100;
+            this.button7.Text = "Veritabanı Yedeğini Al";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(430, 575);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(155, 35);
+            this.button8.TabIndex = 101;
+            this.button8.Text = "Veritabani Geri Yukle";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Yonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1018, 632);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cmbYetki);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox7);
@@ -348,5 +397,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbYetki;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

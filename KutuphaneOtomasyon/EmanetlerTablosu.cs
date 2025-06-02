@@ -1,70 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using KutuphaneOtomasyon.DAL; // Veritabanı işlemleri için
 using static KutuphaneOtomasyon.Form1;
 
 namespace KutuphaneOtomasyon
 {
     public partial class EmanetlerTablosu : Form
     {
+        private readonly Veritabani veritabani;
+
         public EmanetlerTablosu()
         {
             InitializeComponent();
+            veritabani = new Veritabani(); // DAL sınıfından nesne oluşturuyorum
         }
+
+        // Emanetleri listeleyen metot
         private void EmanetleriListele()
         {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
-
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            try
             {
-                conn.Open();
-
-                string sorgu = "SELECT E.EmanetID, U.Ad & ' ' & U.Soyad AS UyeAdi, K.KitapAdi, E.AlisTarihi, E.IadeTarihi, IIF(E.TeslimEdildiMi = True, 'Evet', 'Hayır') AS TeslimDurumu FROM (Emanetler AS E INNER JOIN Uyeler AS U ON E.UyeID = U.UyeID) INNER JOIN Kitaplar AS K ON E.KitapID = K.KitapID";
-
-                OleDbDataAdapter da = new OleDbDataAdapter(sorgu, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridView1.DataSource = dt;
+                // DAL katmanındaki metodu çağırarak emanetleri çekiyorum
+                DataTable dt = veritabani.TumEmanetleriGetir();
+                dataGridView1.DataSource = dt; // Gelen veriyi tabloya bağlıyorum
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogYaz(ex.ToString()); // hatayı dosyaya yaz
+                MessageBox.Show("Kayıt sırasında hata:\n" + ex.Message);
             }
         }
 
-
+        // "Çıkış Yap" butonu
         private void button1_Click(object sender, EventArgs e)
         {
             OrtakIslemler.Cikis(this);
         }
 
+        // "Kitaplar" formuna geç
         private void button2_Click(object sender, EventArgs e)
         {
-            KitaplarTablosu kitaplarTablosu = new KitaplarTablosu();
-            kitaplarTablosu.Show();
-            Hide();
+            new KitaplarTablosu().Show();
+            this.Hide();
         }
 
+        // "Yönetici" formuna geç
         private void button3_Click(object sender, EventArgs e)
         {
-            Yonetici yonetici = new Yonetici();
-            yonetici.Show();
-            Hide();
+            new Yonetici().Show();
+            this.Hide();
         }
 
+        // "Listele" butonu
         private void button4_Click(object sender, EventArgs e)
         {
-            EmanetleriListele();
+            EmanetleriListele(); // Listeleme metodu çağrılır
         }
-
-
-
-       
-
-        
     }
 }

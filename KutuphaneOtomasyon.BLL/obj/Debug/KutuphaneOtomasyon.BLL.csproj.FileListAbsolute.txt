@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\bin\Debug\KutuphaneOtomasyon.BLL.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\bin\Debug\KutuphaneOtomasyon.BLL.pdb
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\bin\Debug\KutuphaneOtomasyon.DAL.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\bin\Debug\KutuphaneOtomasyon.DAL.pdb
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.Properties.Resources.resources
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\Kutuphan.9240B876.Up2Date
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.BLL\obj\Debug\KutuphaneOtomasyon.BLL.pdb

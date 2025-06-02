@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\bin\Debug\KutuphaneOtomasyon.DAL.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\bin\Debug\KutuphaneOtomasyon.DAL.pdb
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.pdb
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.Properties.Resources.resources
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\KutuphaneOtomasyon.DAL.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\bin\Debug\System.Data.OleDb.dll
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\bin\Debug\System.Data.OleDb.xml
+C:\Users\PC\source\repos\KutuphaneOtomasyon\KutuphaneOtomasyon.DAL\obj\Debug\Kutuphan.C4B2AB37.Up2Date

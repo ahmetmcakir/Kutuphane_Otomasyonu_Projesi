@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using KutuphaneOtomasyon;
+using System.Security.Cryptography;
+using System.Text;
+using KutuphaneOtomasyon.DAL;
 
 namespace KutuphaneOtomasyon
 {
@@ -13,6 +13,8 @@ namespace KutuphaneOtomasyon
         {
             InitializeComponent();
         }
+
+        // Ortak çıkış işlemi (başka formlardan çağrılır)
         public static class OrtakIslemler
         {
             public static void Cikis(Form mevcutForm)
@@ -22,7 +24,27 @@ namespace KutuphaneOtomasyon
                 mevcutForm.Hide();
             }
         }
-        //Giriş Butonu
+
+        // Şifreyi salt ile birleştirip SHA256 ile hash'ler
+        private string HashPassword(string password, string salt)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                string combined = password + salt;
+                byte[] bytes = Encoding.UTF8.GetBytes(combined);
+                byte[] hash = sha256.ComputeHash(bytes);
+
+                StringBuilder result = new StringBuilder();
+                foreach (byte b in hash)
+                {
+                    result.Append(b.ToString("x2"));
+                }
+
+                return result.ToString();
+            }
+        }
+
+        // Giriş butonuna tıklanınca çalışır
         private void button1_Click_1(object sender, EventArgs e)
         {
             string kullaniciAdi = textBox1.Text.Trim();
@@ -30,7 +52,7 @@ namespace KutuphaneOtomasyon
 
             if (string.IsNullOrEmpty(kullaniciAdi) || string.IsNullOrEmpty(sifre))
             {
-                MessageBox.Show("Lütfen kullanıcı adı ve şifre giriniz.");
+                MessageBox.Show("Lütfen kullanıcı adı ve şifre giriniz.", "Eksik Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -42,68 +64,72 @@ namespace KutuphaneOtomasyon
                 {
                     baglanti.Open();
 
-                    string sorgu = "SELECT COUNT(*) FROM Uyeler WHERE KullaniciAdi = ? AND Sifre = ?";
+                    string sorgu = "SELECT Yetki, Salt, Sifre FROM Uyeler WHERE KullaniciAdi = ?";
 
                     using (OleDbCommand komut = new OleDbCommand(sorgu, baglanti))
                     {
                         komut.Parameters.Add("?", OleDbType.VarChar).Value = kullaniciAdi;
-                        komut.Parameters.Add("?", OleDbType.VarChar).Value = sifre;
 
-                        int sonuc = Convert.ToInt32(komut.ExecuteScalar());
-
-                        if (sonuc > 0)
+                        using (OleDbDataReader reader = komut.ExecuteReader())
                         {
-                            MessageBox.Show("Giriş başarılı!");
+                            if (reader.Read())
+                            {
+                                string yetki = reader["Yetki"].ToString();
+                                string salt = reader["Salt"].ToString();
+                                string storedHash = reader["Sifre"].ToString();
 
-                            Girismenu giris = new Girismenu(textBox1.Text.Trim());
-                            giris.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
+                                string enteredHash = HashPassword(sifre, salt);
+
+                                if (enteredHash == storedHash)
+                                {
+                                    MessageBox.Show("Giriş başarılı!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    if (yetki == "Kullanici")
+                                    {
+                                        Girismenu giris = new Girismenu(kullaniciAdi);
+                                        giris.Show();
+                                        this.Hide();
+                                    }
+                                    else if (yetki == "Yonetici")
+                                    {
+                                        Yonetici yonetici = new Yonetici();
+                                        yonetici.Show();
+                                        this.Hide();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Geçersiz yetki değeri. Yetki yalnızca 'Kullanici' veya 'Yonetici' olabilir.", "Yetki Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Kullanıcı adı veya şifre hatalı.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Kullanıcı adı bulunamadı.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hata: " + ex.Message);
+                // Hata mesajını kullanıcıya gösteriyorum
+                MessageBox.Show("Giriş sırasında bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Log dosyasına hata kaydediyorum
+                LogHelper.LogYaz("Form1 - Giriş Hatası:\n" + ex.ToString());
             }
         }
-        //Üye ol
+
+        // "Üye Ol" butonuna tıklanınca çalışır
         private void button2_Click_1(object sender, EventArgs e)
         {
             UyeOl uyeForm = new UyeOl();
             uyeForm.Show();
             this.Hide();
         }
-        //Yönetici Giriş
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            string Yönetici_Adi = "admin";
-            string Yönetici_Sifre = "password";
-            string gelen_ad = textBox1.Text;
-            string gelen_sifre = textBox2.Text;
-            if (Yönetici_Adi == gelen_ad && Yönetici_Sifre == gelen_sifre)
-            {
-                Yonetici yonetici = new Yonetici();
-                yonetici.Show();
-                Hide();
-            }
-            else
-                MessageBox.Show("Kullanıcı Adı Veya Şifre Hatalı");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-       
-
-       
     }
 }

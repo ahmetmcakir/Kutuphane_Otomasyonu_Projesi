@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,21 +47,10 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.Location = new System.Drawing.Point(345, 373);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 27);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Yönetici Girişi";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Location = new System.Drawing.Point(345, 164);
+            this.button1.Location = new System.Drawing.Point(345, 185);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 25);
             this.button1.TabIndex = 22;
@@ -91,7 +79,6 @@
             this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Kullanıcı Adı:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
@@ -126,7 +113,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -145,7 +131,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

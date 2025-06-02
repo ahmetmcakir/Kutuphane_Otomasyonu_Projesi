@@ -3,13 +3,14 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
-using static KutuphaneOtomasyon.Form1;
+using KutuphaneOtomasyon.DAL;
+using KutuphaneOtomasyon.BLL;
 
 namespace KutuphaneOtomasyon
 {
     public partial class Girismenu : Form
     {
-        private string kullaniciAdi;
+        private readonly string kullaniciAdi;
 
         public Girismenu(string kullanici)
         {
@@ -17,84 +18,56 @@ namespace KutuphaneOtomasyon
             kullaniciAdi = kullanici;
         }
 
+        // Form yüklendiğinde kitapları listeliyorum
         private void Girismenu_Load_1(object sender, EventArgs e)
         {
-            ListeleKitaplar();
-            ListeleKitaplar2();
-            label1.Text = kullaniciAdi;
-        }
-     
-        private void ListeleKitaplar()
-        {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
-
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            try
             {
-                try
-                {
-                    conn.Open();
-                    string sorgu = "SELECT * FROM Kitaplar";
-                    OleDbDataAdapter da = new OleDbDataAdapter(sorgu, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvKitaplar.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Kitap listesi yüklenemedi:\n" + ex.Message);
-                }
+                dgvKitaplar.DataSource = new Veritabani().KitaplariGetir();
+                dgvEmanetler.DataSource = new DataTable(); // Başlangıçta boş olsun
+                label1.Text = kullaniciAdi;
             }
-        }
-        private void ListeleKitaplar2()
-        {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
-
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            catch (Exception ex)
             {
-                try
-                {
-                    conn.Open();
-                    string sorgu = "SELECT * FROM Kitaplar";
-                    OleDbDataAdapter da = new OleDbDataAdapter(sorgu, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvEmanetler.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Kitap listesi yüklenemedi:\n" + ex.Message);
-                }
+                LogHelper.LogYaz(ex.ToString()); // hatayı dosyaya yaz
+                MessageBox.Show("Kayıt sırasında hata:\n" + ex.Message);
             }
+
         }
+
+        // Giriş yapan kullanıcının UyeID’sini veritabanından alıyorum
         private int GetUyeID(OleDbConnection conn)
         {
-            // KullaniciAdi üzerinden sorgulama
-            OleDbCommand uyeKomut = new OleDbCommand("SELECT UyeID FROM Uyeler WHERE KullaniciAdi = ?", conn);
-            uyeKomut.Parameters.Add("?", OleDbType.VarChar).Value = kullaniciAdi;
-            object uyeIDObj = uyeKomut.ExecuteScalar();
+            OleDbCommand cmd = new OleDbCommand("SELECT UyeID FROM Uyeler WHERE KullaniciAdi = ?", conn);
+            cmd.Parameters.Add("?", OleDbType.VarChar).Value = kullaniciAdi;
 
-            if (uyeIDObj == null)
+            object result = cmd.ExecuteScalar();
+            if (result == null)
                 throw new Exception("Kullanıcıya ait üye kaydı bulunamadı.");
 
-            return Convert.ToInt32(uyeIDObj);
+            return Convert.ToInt32(result);
         }
 
+        // DataGridView renklendirme (emanet durumu için)
         private void dgvEmanetler_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in dgvEmanetler.Rows)
             {
                 string durum = row.Cells["Durum"].Value?.ToString();
 
-                if (durum == "Geciken")
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                else if (durum == "Teslim Edildi")
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-                else if (durum == "Devam Eden")
-                    row.DefaultCellStyle.BackColor = Color.LightYellow;
+                if (durum != null)
+                {
+                    if (durum.Contains("Geciken"))
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                    else if (durum == "Teslim Edildi")
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    else if (durum == "Devam Eden")
+                        row.DefaultCellStyle.BackColor = Color.LightYellow;
+                }
             }
         }
 
-        // Kitap Ödünç Al
+        // Kitap ödünç alma işlemi
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (dgvKitaplar.SelectedRows.Count == 0)
@@ -104,39 +77,30 @@ namespace KutuphaneOtomasyon
             }
 
             int kitapID = Convert.ToInt32(dgvKitaplar.SelectedRows[0].Cells["KitapID"].Value);
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
 
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb"))
             {
                 try
                 {
                     conn.Open();
                     int uyeID = GetUyeID(conn);
 
-                    OleDbCommand emanetEkle = new OleDbCommand(
-                        "INSERT INTO Emanetler (UyeID, KitapID, AlisTarihi, IadeTarihi, TeslimEdildiMi) VALUES (?, ?, ?, ?, ?)", conn);
-                    emanetEkle.Parameters.Add("?", OleDbType.Integer).Value = uyeID;
-                    emanetEkle.Parameters.Add("?", OleDbType.Integer).Value = kitapID;
-                    emanetEkle.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
-                    emanetEkle.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now.AddDays(14);
-                    emanetEkle.Parameters.Add("?", OleDbType.Boolean).Value = false;
-                    emanetEkle.ExecuteNonQuery();
-
-                    OleDbCommand stokAzalt = new OleDbCommand("UPDATE Kitaplar SET Adet = Adet - 1 WHERE KitapID = ?", conn);
-                    stokAzalt.Parameters.Add("?", OleDbType.Integer).Value = kitapID;
-                    stokAzalt.ExecuteNonQuery();
-
+                    new Veritabani().KitapOduncAl(conn, uyeID, kitapID);
                     MessageBox.Show("Kitap başarıyla ödünç alındı.");
-                    ListeleKitaplar();
+
+                    // Kitap listesini güncelliyorum
+                    dgvKitaplar.DataSource = new Veritabani().KitaplariGetir();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Hata:\n" + ex.Message);
+                    LogHelper.LogYaz(ex.ToString()); // hatayı dosyaya yaz
+                    MessageBox.Show("Kayıt sırasında hata:\n" + ex.Message);
                 }
+
             }
         }
 
-        // Kitap İade Et
+        // Kitap iade etme işlemi
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (dgvKitaplar.SelectedRows.Count == 0)
@@ -146,97 +110,60 @@ namespace KutuphaneOtomasyon
             }
 
             int kitapID = Convert.ToInt32(dgvKitaplar.SelectedRows[0].Cells["KitapID"].Value);
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
 
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb"))
             {
                 try
                 {
                     conn.Open();
                     int uyeID = GetUyeID(conn);
 
-                    OleDbCommand kontrol = new OleDbCommand(
-                        "SELECT EmanetID FROM Emanetler WHERE UyeID = ? AND KitapID = ? AND TeslimEdildiMi = false", conn);
-                    kontrol.Parameters.Add("?", OleDbType.Integer).Value = uyeID;
-                    kontrol.Parameters.Add("?", OleDbType.Integer).Value = kitapID;
+                    new Veritabani().KitapIadeEt(conn, uyeID, kitapID);
+                    MessageBox.Show("Kitap başarıyla iade edildi.");
 
-                    object emanetIDObj = kontrol.ExecuteScalar();
-
-                    if (emanetIDObj == null)
-                    {
-                        MessageBox.Show("Bu kitabı zaten iade etmişsiniz veya ödünç almamışsınız.");
-                        return;
-                    }
-
-                    int emanetID = Convert.ToInt32(emanetIDObj);
-
-                    OleDbCommand teslimEt = new OleDbCommand(
-                        "UPDATE Emanetler SET TeslimEdildiMi = true WHERE EmanetID = ?", conn);
-                    teslimEt.Parameters.Add("?", OleDbType.Integer).Value = emanetID;
-                    teslimEt.ExecuteNonQuery();
-
-                    OleDbCommand stokArtir = new OleDbCommand(
-                        "UPDATE Kitaplar SET Adet = Adet + 1 WHERE KitapID = ?", conn);
-                    stokArtir.Parameters.Add("?", OleDbType.Integer).Value = kitapID;
-                    stokArtir.ExecuteNonQuery();
-
-                    MessageBox.Show("Kitap iade edildi.");
-                    ListeleKitaplar();
+                    dgvKitaplar.DataSource = new Veritabani().KitaplariGetir();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("İade sırasında hata:\n" + ex.Message);
+                    LogHelper.LogYaz(ex.ToString()); // hatayı dosyaya yaz
+                    MessageBox.Show("Kayıt sırasında hata:\n" + ex.Message);
                 }
+
             }
         }
 
-        // Emanetleri Listele
+        // Kullanıcının emanet kitaplarını listeleme + gecikme kontrolü
         private void button3_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb";
-
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Kutuphane.accdb"))
             {
                 try
                 {
                     conn.Open();
                     int uyeID = GetUyeID(conn);
 
-                    string sorgu = @"
-                        SELECT 
-                            K.KitapAdi, 
-                            K.Yazar, 
-                            E.AlisTarihi, 
-                            E.IadeTarihi, 
-                            E.TeslimEdildiMi,
-                            IIf(E.TeslimEdildiMi = true, 'Teslim Edildi', 
-                            IIf(E.IadeTarihi < Date(), 'Geciken', 'Devam Eden')) AS Durum
-                        FROM 
-                            Emanetler E
-                        INNER JOIN 
-                            Kitaplar K ON E.KitapID = K.KitapID
-                        WHERE 
-                            E.UyeID = ?";
+                    // Veritabanından emanet verileri çekiliyor
+                    var dt = new Veritabani().EmanetleriGetir(uyeID);
 
-                    OleDbCommand cmd = new OleDbCommand(sorgu, conn);
-                    cmd.Parameters.Add("?", OleDbType.Integer).Value = uyeID;
-                    OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvEmanetler.DataSource = dt;
+                    // Geciken kitapları ve cezaları işliyorum
+                    var guncellenmis = EmanetIslemleri.CezaHesapla(dt);
+
+                    // Listeyi DataGridView'e yansıtıyorum
+                    dgvEmanetler.DataSource = guncellenmis;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Emanetleri getirirken hata:\n" + ex.Message);
+                    LogHelper.LogYaz(ex.ToString()); // hatayı dosyaya yaz
+                    MessageBox.Show("Kayıt sırasında hata:\n" + ex.Message);
                 }
+
             }
         }
 
+        // Çıkış butonuna basıldığında giriş formuna dönülür
         private void button4_Click_1(object sender, EventArgs e)
         {
             OrtakIslemler.Cikis(this);
         }
-
-       
     }
 }
