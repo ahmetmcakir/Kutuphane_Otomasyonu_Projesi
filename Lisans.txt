@@ -1,0 +1,4 @@
+Bu yazılım Ahmet M. Çakır tarafından geliştirilmiştir.
+Tüm telif hakları yazara aittir.
+Ticari kullanım, çoğaltma ve dağıtım hakkı sadece yazarın izniyle mümkündür.
+Kullanıcılar bu yazılımı lisans karşılığı kullanabilir.
