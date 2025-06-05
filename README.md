@@ -54,3 +54,7 @@ Tüm hatalar hata_kayitlari.txt dosyasına otomatik olarak kaydedilir
 💾 Veritabanı Yedekleme
 Kullanıcı seçimiyle klasöre .accdb uzantılı veritabanı yedeği alınabilir
 
+### Lisans
+
+Bu yazılım Ahmet M. Çakır tarafından geliştirilmiştir. Tüm hakları saklıdır.  
+Ticari kullanım izne tabidir. Detaylı bilgi için Lisans.txt dosyasına bakınız.
